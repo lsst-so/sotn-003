@@ -31,10 +31,11 @@
 This technote outlines the investigation into a potential relationship between ellipticity across the focal plane of the LSST Camera and the degrees of freedom of the Simonyi Survey Telescope. 
 The aim of this investigation was ideally to find a relationship between the behavior of the ellipticity and a particular degree of freedom or combination of degrees of freedom. 
 Such a finding would allow us to manipulate the optical system in order to correct for ellipticity when the behavior is contributing to the degradation of the point spread function. 
-The results of this investigation reveal that, likely due to the highly nonlinear nature of second moments and ellipticity, any relationship to the degrees of freedom cannot be established. 
-Rather, the investigation reveals that the common assumption that the degrees of freedom `start' near zero is usually false. 
-Without knowing that initial conditions of the optical system, we cannot infer any potential relationship to the ellipticity behavior. 
-The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
+The results of this investigation reveal that, likely due to the nonlinear nature of second moments and ellipticity, any relationship to the degrees of freedom cannot be established. 
+Rather, the investigation implies that the common assumption that the degrees of freedom originate near zero is usually false. 
+Without knowing the initial conditions of the optical system, it becomes difficult to infer any potential relationship to the ellipticity behavior. 
+Ultimately, this investigation suggests that standing assumption that the initial conditions for the optical system being approximately zero is not reliable. 
+
 
 }
 
@@ -49,18 +50,36 @@ The modeled ellipticity value integrated into Rubin TV rarely agrees with the me
 
 \begin{document}
 
-% Create the title page.
-\maketitle
-% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
-% use \mkshorttitle to remove the extra pages
+
+%\maketitle
+\mkshorttitle  %for technotes, remove extra pages
 
 \section{Introduction}
 
-The Vera C. Rubin Observatory Active Optics System (AOS) relies on curvature wavefront sensing to measure and correct for offsets on the Simonyi Survey Telescope. 
-The AOS does this by manipulating the 50 degrees of freedom on the optical components of the telescope: the LSST Camera, the M2 secondary mirror, and the M1M3 mirror monolith consisting of the primary and tertiary mirrors. 
-By ensuring that the optical components of the telescope are optimally aligned, we can improve image quality and reduce optical contributions to the point spread function. 
+The Vera C. Rubin Observatory Active Optics System (AOS) relies on curvature wavefront sensing to measure and correct for offsets on the Simonyi Survey Telescope \cite{Xin2015}. 
+The AOS does this by manipulating the 50 degrees of freedom of the optical components of the telescope: the LSST Camera, the M2 secondary mirror, and the M1M3 mirror monolith consisting of the primary and tertiary mirrors. 
+By ensuring that the optical components of the telescope are optimally aligned, we can improve image quality and reduce optical contributions to the point spread function (PSF). 
 
-%However, 
+However, the ellipticity across the focal plane has been less responsive to AOS efforts to correct misalignment on the telescope. 
+Ellipticity is defined as the amount of deviation from a perfect circle or sphere. 
+On a telescope, ellipticity is measured from the components of the second-moment matrix:
+
+\begin{equation}
+    Q = \begin{bmatrix} Q_{xx} & Q_{xy} \\ Q_{yx} & Q_{yy} \end{bmatrix}
+\end{equation}
+
+\section{Observation Methods}
+
+Data for this investigation was taken intermittently on the Rubin Observatory from April to September of 2025.
+For each observation, a degree of freedom was selected and perturbed by a large amount, either in degrees or microns depending on the index.
+After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time. 
+The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected patterns more clearly.
+
+\section{Analysis}
+
+\section{Results and Conclusion}
+
+The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
 
 \appendix
 
