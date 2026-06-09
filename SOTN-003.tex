@@ -26,15 +26,24 @@
 
 \date{\vcsDate}
 
-\setDocAbstract{%
+\setDocAbstract{%\
+
+% with short title this is only visible in the side-bar, so pare it down
 
 This technote outlines the investigation into a potential relationship between ellipticity across the focal plane of the LSST Camera and the degrees of freedom of the Simonyi Survey Telescope. 
-The aim of this investigation was ideally to find a relationship between the behavior of the ellipticity and a particular degree of freedom or combination of degrees of freedom. 
 Such a finding would allow us to manipulate the optical system in order to correct for ellipticity when the behavior is contributing to the degradation of the point spread function. 
 The results of this investigation reveal that, likely due to the nonlinear nature of second moments and ellipticity, any relationship to the degrees of freedom cannot be established. 
 Rather, the investigation implies that the common assumption that the degrees of freedom originate near zero is usually false. 
-Without knowing the initial conditions of the optical system, it becomes difficult to infer any potential relationship to the ellipticity behavior. 
-Ultimately, this investigation suggests that standing assumption that the initial conditions for the optical system being approximately zero is not reliable. 
+
+% original abstract 
+
+%This technote outlines the investigation into a potential relationship between ellipticity across the focal plane of the LSST Camera and the degrees of freedom of the Simonyi Survey Telescope. 
+%The aim of this investigation was ideally to find a relationship between the behavior of the ellipticity and a particular degree of freedom or combination of degrees of freedom. 
+%Such a finding would allow us to manipulate the optical system in order to correct for ellipticity when the behavior is contributing to the degradation of the point spread function. 
+%The results of this investigation reveal that, likely due to the nonlinear nature of second moments and ellipticity, any relationship to the degrees of freedom cannot be established. 
+%Rather, the investigation implies that the common assumption that the degrees of freedom originate near zero is usually false. 
+%Without knowing the initial conditions of the optical system, it becomes difficult to infer any potential relationship to the ellipticity behavior. 
+%Ultimately, this investigation suggests that standing assumption that the initial conditions for the optical system being approximately zero is not reliable. 
 
 
 }
@@ -65,8 +74,23 @@ Ellipticity is defined as the amount of deviation from a perfect circle or spher
 On a telescope, ellipticity is measured from the components of the second-moment matrix:
 
 \begin{equation}
-    Q = \begin{bmatrix} Q_{xx} & Q_{xy} \\ Q_{yx} & Q_{yy} \end{bmatrix}
+    \text{Q} = \begin{bmatrix} \text{Q}_{xx} & \text{Q}_{xy} \\ \text{Q}_{yx} & \text{Q}_{yy} \end{bmatrix}
 \end{equation}
+
+in which Q is mathematically calculated from the image intensity about the centroid. 
+The ellipticity values $e_{1}$ and $e_{2}$ for the focal plane are then calculated from these matrix components:
+
+\begin{equation}
+    e_{1} = \frac{\text{Q}_{xx}-\text{Q}_{yy}}{\text{Q}_{xx}+\text{Q}_{yy}}
+\end{equation}
+
+and
+
+\begin{equation}
+    e_{2} = \frac{2 \text{Q}_{xy}}{\text{Q}_{xx}+\text{Q}_{yy}}
+\end{equation}
+
+where $e_{1}$ is the ellipticity along the $x-$ and $y-$axes and $e_{2}$ is the ellipticity along axes rotated 45\degree.
 
 \section{Observation Methods}
 
@@ -81,6 +105,9 @@ The set of 5 triplets allowed us to average over the exposures to reduce the atm
 
 The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
 
+
+\clearpage
+
 \appendix
 
 \section{Acknowledgements}
@@ -88,7 +115,6 @@ The modeled ellipticity value integrated into Rubin TV rarely agrees with the me
 This material is based upon work supported in part by the National Science Foundation through Cooperative Agreements AST-1258333 and AST-2241526 and Cooperative Support Agreements AST-1202910 and AST-2211468 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
 Additional Rubin Observatory funding comes from private donations, grants to universities, and in-kind support from LSST-DA Institutional Members.
 
-% Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
 \section{References} \label{sec:bib}
 \renewcommand{\refname}{} % Suppress default Bibliography section
@@ -99,9 +125,5 @@ Additional Rubin Observatory funding comes from private donations, grants to uni
 \input{acronyms.tex}
 % If you want glossary uncomment below -- comment out the two lines above
 %\printglossaries
-
-
-
-
 
 \end{document}
