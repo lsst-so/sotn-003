@@ -102,9 +102,39 @@ Data for this investigation was taken intermittently on the Rubin Observatory fr
 For each observation, a degree of freedom was selected and perturbed by a large amount, either in degrees or microns depending on the index.
 After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time.
 The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected ellipticity patterns more clearly.
-The offsets applied to the selected degrees of freedom are listed in Table \ref{perturbations}.
+The offsets applied to the selected degrees of freedom are listed in Tables \ref{tab:hexapods} and \ref{tab:bending}.
 
-\input{perturbations.tex}
+\begin{table*}
+\centering
+\caption{Hexapod perturbations applied:}
+\label{tab:hexapods}
+\begin{tabular}{ccc}
+\hline
+Hexapod $z$ &
+Hexapod $x,y$ &
+Hexapod Tilts \\
+\hline
+$-75$ &
+$-2000,\,-2500$ &
+$-0.01,\,-0.05$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Bending mode perturbations applied:}
+\label{tab:bending}
+\begin{tabular}{cc}
+\hline
+M2 Bending Modes &
+M1M3 Bending Modes \\
+\hline
+$-0.025,\,-0.075,\,-0.2,\,-0.25,\,-0.3,\,-0.5$ &
+$-0.025,\,-0.03125,\,-0.05,\,-0.0625,\,-0.1875,\,-0.25,\,-0.375,\,-0.5$ \\
+\hline
+\end{tabular}
+\end{table*}
 
 \section{Analysis}
 
