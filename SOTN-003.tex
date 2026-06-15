@@ -87,7 +87,7 @@ and
     e_{2} = \frac{2 I_{xy}}{I_{xx}+I_{yy}}
 \end{equation}
 
-where $e_{1}$ is the ellipticity along the x- and y-axes and $e_{2}$ is the ellipticity along axes rotated by 45$^{\circ}$. 
+where $e_{1}$ is the ellipticity along the x- and y-axes and $e_{2}$ is the ellipticity along the axes rotated by 45$^{\circ}$. 
 Both of these values are measured and reported to Rubin TV per in-focus exposure, as well as ingested in the \texttt{ConsDB}.
 
 A coherent ellipticity pattern across the focal plane is dominated by effects originating from the optical system itself \cite{Jarvis2008}. 
@@ -103,10 +103,11 @@ For each observation, a degree of freedom was selected and perturbed by a large 
 After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time.
 The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected ellipticity patterns more clearly.
 The offsets applied to the selected degrees of freedom are listed in Tables \ref{tab:hexapods} and \ref{tab:bending}.
+In total, the data for this investigation is comprised of 117 exposures. 
 
 \begin{table*}
 \centering
-\caption{Hexapod perturbations applied:}
+\caption{This table is an outline of hexapod perturbations applied to the telescope. For perturbations to the $x$, $y$, or $z$ components, the units are in microns. For perturbations to the hexapod tilts ($rx$ or $ry$) the units are in degrees.}
 \label{tab:hexapods}
 \begin{tabular}{c|c|c}
 \hline
@@ -123,9 +124,9 @@ $-0.01,\,-0.05$ \\
 
 \begin{table*}
 \centering
-\caption{Bending mode perturbations applied:}
+\caption{Bending mode perturbations applied: (EDIT THIS TABLE FORMATTING)}
 \label{tab:bending}
-\begin{tabular}{cc}
+\begin{tabular}{c|c}
 \hline
 M2 Bending Modes &
 M1M3 Bending Modes \\
@@ -138,8 +139,12 @@ $-0.025,\,-0.03125,\,-0.05,\,-0.0625,\,-0.1875,\,-0.25,\,-0.375,\,-0.5$ \\
 
 \section{Analysis}
 
-Data for this investigation comprised of 117 exposures, which were examined by eye and formatted into an \texttt{astropy.table.Table} object. 
-Columns of the \texttt{Table} object consisted of information pulled out of the \texttt{ConsDB}
+In order to analyze this data, we compared the on-sky images to images modeled using \texttt{StarSharp}: a simulation package which allows us to model the focal plane based on input perturbations to any of the degrees of freedom. 
+For each on-sky exposure, a corresponding model image was built with \texttt{StarSharp} to compare the expected patterns for particular bending mode. 
+Expected patterns for each of the bending mode degrees of freedom can also be seen in Figures 1 and 2 of \cite{bending_modes}.
+
+The exposures for this investigation were examined by eye and formatted into an \texttt{astropy.table.Table} object. 
+Columns of the \texttt{Table} object consisted of information pulled out of the \texttt{ConsDB} and \texttt{ASDF} metadata files processed from the Butler.
 
 \section{Results and Conclusion}
 
