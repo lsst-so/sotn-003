@@ -5,6 +5,7 @@
 
 % Local commands go here.
 
+
 \title{Investigation of Ellipticity as a Function of the Degrees of Freedom}
 
 % This can write metadata into the PDF.
@@ -70,32 +71,40 @@ Ellipticity is defined as the amount of deviation from a perfect circle or spher
 On a telescope, ellipticity is measured from the components of the second-moment matrix:
 
 \begin{equation}
-    Q = \begin{bmatrix} Q_{xx} & Q_{xy} \\ Q_{yx} & Q_{yy} \end{bmatrix}
+    I = \begin{bmatrix} I_{xx} & I_{xy} \\ I_{yx} & I_{yy} \end{bmatrix}
 \end{equation}
 
-in which $Q$ is calculated from the image intensity about the centroid. 
+in which $I$ is calculated from the image intensity about the centroid. 
 The ellipticity values $e_{1}$ and $e_{2}$ for the focal plane are then calculated from these matrix components:
 
 \begin{equation}
-    e_{1} = \frac{Q_{xx}-Q_{yy}}{Q_{xx}+Q_{yy}}
+    e_{1} = \frac{I_{xx}-I_{yy}}{I_{xx}+I_{yy}}
 \end{equation}
 
 and
 
 \begin{equation}
-    e_{2} = \frac{2 Q_{xy}}{Q_{xx}+Q_{yy}}
+    e_{2} = \frac{2 I_{xy}}{I_{xx}+I_{yy}}
 \end{equation}
 
 where $e_{1}$ is the ellipticity along the x- and y-axes and $e_{2}$ is the ellipticity along axes rotated by 45$^{\circ}$. 
+Both of these values are measured and reported to Rubin TV per in-focus exposure, as well as ingested in the \texttt{ConsDB}.
 
-A coherent ellipticity pattern across the focal plane is dominated by effects originating from the optical system itself \cite{Jarvis2008}. However, this is less likely to be corrected by the AOS compared to other typical optical aberrations represented by the Zernike polynomials since they share a linear relationship to the total wavefront error. Ellipticity, on the other hand, is represented by second moments. Changing one Zernike value will linearly add or take away from the total wavefront error, while any change to the intensity distribution will change the second moments globally across the image. Despite this more complex relationship, the goal of these observations was to be able to identify a correlation visually between the ellipticity and degrees of freedom and use this as a starting point to better understand the relationship.  
+A coherent ellipticity pattern across the focal plane is dominated by effects originating from the optical system itself \cite{Jarvis2008}. 
+However, this is less likely to be corrected by the AOS compared to other typical optical aberrations represented by the Zernike polynomials since they share a linear relationship to the total wavefront error. 
+Ellipticity, on the other hand, is represented by second moments. 
+Changing one Zernike value will linearly add or take away from the total wavefront error, while any change to the intensity distribution will change the second moments globally across the image. 
+Despite this more complex relationship, the goal of these observations was to be able to identify a correlation visually between the ellipticity and degrees of freedom and use this as a starting point to better understand the relationship.  
 
 \section{Observation Methods}
 
 Data for this investigation was taken intermittently on the Rubin Observatory from April to September of 2025.
 For each observation, a degree of freedom was selected and perturbed by a large amount, either in degrees or microns depending on the index.
-After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time. 
-The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected ellipticity patterns more clearly. 
+After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time.
+The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected ellipticity patterns more clearly.
+The offsets applied to the selected degrees of freedom are listed in Table \ref{perturbations}.
+
+\input{perturbations.tex}
 
 \section{Analysis}
 
