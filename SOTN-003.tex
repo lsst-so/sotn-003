@@ -3,6 +3,8 @@
 
 % Package imports go here.
 
+\usepackage{tabularx,array}
+
 % Local commands go here.
 
 
@@ -102,53 +104,95 @@ Data for this investigation was taken intermittently on the Rubin Observatory fr
 For each observation, a degree of freedom was selected and perturbed by a large amount, either in degrees or microns depending on the index.
 After perturbing the selected degree of freedom, a set of 5 triplets were taken in series with either a 15 or 30 second exposure time.
 The set of 5 triplets allowed us to average over the exposures to reduce the atmospheric effects and see any expected ellipticity patterns more clearly.
-The offsets applied to the selected degrees of freedom are listed in Tables \ref{tab:hexapods} and \ref{tab:bending}.
+The offsets applied to the selected degrees of freedom are listed in Table \ref{tab:perturbations}.
 In total, the data for this investigation is comprised of 117 exposures. 
 
 \begin{table*}
 \centering
-\caption{This table is an outline of hexapod perturbations applied to the telescope. For perturbations to the $x$, $y$, or $z$ components, the units are in microns. For perturbations to the hexapod tilts ($rx$ or $ry$) the units are in degrees.}
-\label{tab:hexapods}
-\begin{tabular}{c|c|c}
+\caption{This table is an outline of all the perturbations applied to the degrees of freedom of the telescope. For perturbations to the bending modes or $x$, $y$, and $z$ components of the hexapods, the units are in microns. For perturbations to the hexapod tilts ($rx$ or $ry$) the units are in degrees.}
+\label{tab:perturbations}
+
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|
+                              >{\centering\arraybackslash}X|
+                              >{\centering\arraybackslash}X|
+                              >{\centering\arraybackslash}X|}
 \hline
-Hexapod $z$ &
-Hexapod $x,y$ &
-Hexapod Tilts \\
+\textbf{Cam \textit{z}} & -75.0 & \textbf{M1M3 B16} & -0.03125 \\
 \hline
-$-75$ &
-$-2000,\,-2500$ &
-$-0.01,\,-0.05$ \\
+\textbf{Cam \textit{x}} & -2000.0, -2500.0 & \textbf{M1M3 B17} & -0.05 \\
 \hline
-\end{tabular}
+\textbf{Cam \textit{y}} & -2000.0, -2500.0 & \textbf{M1M3 B18} & -0.05 \\
+\hline
+\textbf{Cam \textit{rx}} & -0.01, -0.05 & \textbf{M1M3 B19} & -0.0375 \\
+\hline
+\textbf{Cam \textit{ry}} & -0.01, -0.05 & \textbf{M1M3 B20} & -0.025 \\
+\hline
+\textbf{M2 \textit{z}} & -75.0 & \textbf{M2 B1} & -0.3, -0.5 \\
+\hline
+\textbf{M2 \textit{x}} & -2000.0 & \textbf{M2 B2} & -0.5 \\
+\hline
+\textbf{M2 \textit{y}} & -2000.0 & \textbf{M2 B3} & -0.5 \\
+\hline
+\textbf{M2 \textit{rx}} & -0.01 & \textbf{M2 B4} & -0.5 \\
+\hline
+\textbf{M2 \textit{ry}} & -0.01 & \textbf{M2 B5} & -0.25 \\
+\hline
+\textbf{M1M3 B1} & -0.5 & \textbf{M2 B6} & -0.5 \\
+\hline
+\textbf{M1M3 B2} & -0.5 & \textbf{M2 B7} & -0.5 \\
+\hline
+\textbf{M1M3 B3} & -0.5 & \textbf{M2 B8} & -0.25 \\
+\hline
+\textbf{M1M3 B4} & -0.375 & \textbf{M2 B9} & -0.25 \\
+\hline
+\textbf{M1M3 B5} & -0.375 & \textbf{M2 B10} & -0.25 \\
+\hline
+\textbf{M1M3 B6} & -0.5 & \textbf{M2 B11} & -0.25 \\
+\hline
+\textbf{M1M3 B7} & -0.5 & \textbf{M2 B12} & -0.25 \\
+\hline
+\textbf{M1M3 B8} & -0.25 & \textbf{M2 B13} & -0.25 \\
+\hline
+\textbf{M1M3 B9} & -0.25 & \textbf{M2 B14} & -0.2 \\
+\hline
+\textbf{M1M3 B10} & -0.25 & \textbf{M2 B15} & -0.075 \\
+\hline
+\textbf{M1M3 B11} & -0.25 & \textbf{M2 B16} & -0.075 \\
+\hline
+\textbf{M1M3 B12} & -0.1875 & \textbf{M2 B17} & -0.075 \\
+\hline
+\textbf{M1M3 B13} & N/A & \textbf{M2 B18} & -0.025 \\
+\hline
+\textbf{M1M3 B14} & -0.05 & \textbf{M2 B19} & -0.025 \\
+\hline
+\textbf{M1M3 B15} & -0.0625 & \textbf{M2 B20} & -0.025 \\
+\hline
+\end{tabularx}
 \end{table*}
 
-\begin{table*}
-\centering
-\caption{Bending mode perturbations applied: (EDIT THIS TABLE FORMATTING)}
-\label{tab:bending}
-\begin{tabular}{c|c}
-\hline
-M2 Bending Modes &
-M1M3 Bending Modes \\
-\hline
-$-0.025,\,-0.075,\,-0.2,\,-0.25,\,-0.3,\,-0.5$ &
-$-0.025,\,-0.03125,\,-0.05,\,-0.0625,\,-0.1875,\,-0.25,\,-0.375,\,-0.5$ \\
-\hline
-\end{tabular}
-\end{table*}
 
 \section{Analysis}
 
-In order to analyze this data, we compared the on-sky images to images modeled using \texttt{StarSharp}: a simulation package which allows us to model the focal plane based on input perturbations to any of the degrees of freedom. 
+In order to analyze this data, we compared the on-sky images to models created using \texttt{StarSharp}: a simulation package which allows us to simulate the focal plane based on input perturbations to any of the degrees of freedom. 
 For each on-sky exposure, a corresponding model image was built with \texttt{StarSharp} to compare the expected patterns for particular bending mode. 
 Expected patterns for each of the bending mode degrees of freedom can also be seen in Figures 1 and 2 of \cite{bending_modes}.
+Figure \ref{fig:example_image} shows on-sky data next to the \texttt{StarSharp} model for this investigation.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{2025041700635_M2_B1.png}
+    \caption{Comparison between the on-sky second moment information measured using the PSF information from stars in the in-focus image and the modeled image built using \texttt{StarSharp}. This data is for the M2B1 bending mode. The in-focus image was taken on April 17th, 2025.}
+    \label{fig:example_image}
+\end{figure}
 
 The exposures for this investigation were examined by eye and formatted into an \texttt{astropy.table.Table} object. 
-Columns of the \texttt{Table} object consisted of information pulled out of the \texttt{ConsDB} and \texttt{ASDF} metadata files processed from the Butler.
+Columns of the \texttt{Table} object consisted of information pulled out of the \texttt{ConsDB} and ASDF files built with metadata from the Butler.
 
 \section{Results and Conclusion}
 
-The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
+Comparing the 
+
+The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured on-sky ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
 
 
 \clearpage
