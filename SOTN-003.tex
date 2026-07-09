@@ -181,7 +181,7 @@ Below, Figure \ref{fig:example_image} shows derived on-sky second moment data ne
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{2025041700635_M2_B1.png}
-    \caption{Comparison between the on-sky second moment information measured using the PSF information from stars on the in-focus image and the modeled image built using \texttt{StarSharp}. This data is for the M2B1 bending mode. The in-focus image has a \texttt{seqnum} of 2025041700635.}
+    \caption{Comparison between the on-sky second moment information measured using the PSF information from stars on the in-focus image and the modeled image built using \texttt{StarSharp}. This data is for the M2B1 bending mode and has a \texttt{seqnum} of 2025041700635.}
     \label{fig:example_image}
 \end{figure}
 
@@ -191,36 +191,35 @@ This formatting allowed us to easily index the observing conditions for each set
 Some of this data is reflected in Figure \ref{fig:conditions}, where we can see that there is not any signification correlation between the observing conditions and the visibility of the second moment patterns. 
 Seeing measurements recorded by the DIMM, wind speeds, or even the total PSF do not seem to influence the visibility of these patterns. 
 
-An original consideration to explain why the ellipticity pattern did not seem to be recoverable in the on-sky images was a result of unpredictable behavior in the upper atmosphere not adequately represented by DIMM measurements.
-However, this would have been captured by the total PSF which also showed no relationship to pattern visibility. 
-
-
-While Figure \ref{fig:example_image} is an instance where the expected ellipticity pattern is not visible, 15 exposures were flagged as matching the \texttt{StarSharp} model. Figure \ref{fig:visible} is an example of this match. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\linewidth]{2025042000586_Cam_z.png}
-    \caption{Comparison between the on-sky second moment information for an exposure where the expected pattern from \texttt{StarSharp} is recoverable in the image. This exposure has a \texttt{seqnum} of 2025042000586.}
-    \label{fig:visible}
-\end{figure}
-
-While no correlation to the observing conditions could be established in the pattern-visible exposures, it was noted that exposures where the pattern is visible are almost exclusively hexapod degrees of freedom as opposed to bending modes. 
-
-
-\section{Results and Conclusion}
-
-
-Comparing the second moment information from on-sky data to the models, such as in Figure \ref{fig:example_image}, it is clear that the patterns are not typically recoverable. 
-For the 117 exposures of the investigation, only 15 were considered to reflect the expected pattern for manipulating a given degree of freedom. 
-Initially, the hypothesis for this was that the observing conditions and atmosphere would dominate any contribution from the degrees of freedom and the patterns might only be visible in the clearest exposures. 
-However, 
-
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{multiplot.png}
     \caption{Comparisons between the observing conditions of exposures where the expected patterns were visible to the rest of the data. }
     \label{fig:conditions}
 \end{figure}
+
+An original consideration to explain why the ellipticity pattern did not seem to be recoverable in the on-sky images was a result of unpredictable behavior in the upper atmosphere not adequately represented by DIMM measurements.
+However, this would have been captured by the total PSF which also showed no relationship to pattern visibility. 
+
+While Figure \ref{fig:example_image} is an instance where the expected ellipticity pattern is not visible, 15 exposures were flagged as matching the \texttt{StarSharp} model. Figure \ref{fig:visible} is an example of this match. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{2025042000586_Cam_z.png}
+    \caption{Comparison between the on-sky second moment information for an exposure where the expected pattern from \texttt{StarSharp} is recoverable in the image. This exposure is manipulating the Cam-$z$ hexapod and has a \texttt{seqnum} of 2025042000586.}
+    \label{fig:visible}
+\end{figure}
+
+While no correlation to the observing conditions could be established in the pattern-visible exposures, it was noted that exposures where the pattern \textit{is} visible are almost exclusively hexapod degrees of freedom as opposed to bending modes. 
+This was the only real identifiable trend, as airmass, atmospheric pressure, and exposure time all also failed to show any relationship to pattern visibility.  
+
+\section{Results and Conclusion}
+
+Only 12.8\% of the images reflected the expected pattern for the manipulated degree of freedom. 
+Initially, the hypothesis for this result was that the observing conditions and atmosphere would dominate any contribution from the degrees of freedom and the patterns might only be visible in the clearest exposures. 
+However, due to the lack of relationship to any of the observing conditions, it can be concluded that the lack of pattern visibility is not a result of being dominated or masked by atmospheric conditions.
+Rather, the reason for the 
+
 
 The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured on-sky ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
 
