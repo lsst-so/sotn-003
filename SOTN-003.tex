@@ -173,22 +173,47 @@ In total, the data for this investigation is comprised of 117 exposures.
 
 \section{Analysis}
 
-In order to analyze this data, we compared the on-sky images to models created using \texttt{StarSharp}: a simulation package which allows us to simulate the focal plane based on input perturbations to any of the degrees of freedom. 
+In order to analyze this data, we compared the on-sky images to models created using \texttt{StarSharp}: a simulation package which allowed us to simulate the focal plane based on input perturbations to any of the degrees of freedom. 
 For each on-sky exposure, a corresponding model image was built with \texttt{StarSharp} to compare the expected patterns for particular bending mode. 
 Expected patterns for each of the bending mode degrees of freedom can also be seen in Figures 1 and 2 of \cite{bending_modes}.
-Below, Figure \ref{fig:example_image} shows on-sky data next to the \texttt{StarSharp} model for this investigation.
+Below, Figure \ref{fig:example_image} shows derived on-sky second moment data next to the \texttt{StarSharp} model for this investigation.
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{2025041700635_M2_B1.png}
-    \caption{Comparison between the on-sky second moment information measured using the PSF information from stars in the in-focus image and the modeled image built using \texttt{StarSharp}. This data is for the M2B1 bending mode. The in-focus image was taken on April 17th, 2025.}
+    \caption{Comparison between the on-sky second moment information measured using the PSF information from stars on the in-focus image and the modeled image built using \texttt{StarSharp}. This data is for the M2B1 bending mode. The in-focus image has a \texttt{seqnum} of 2025041700635.}
     \label{fig:example_image}
 \end{figure}
 
-The exposures for this investigation were examined by eye and formatted into an \texttt{astropy.table.Table} object. 
+The exposures for this investigation were examined by eye and formatted into an \texttt{astropy} \texttt{Table} object. 
 Columns of the \texttt{Table} object consisted of information pulled out of the \texttt{ConsDB} and ASDF files built with metadata from the Butler.
 This formatting allowed us to easily index the observing conditions for each set of exposures and compare between images where the expected second moment patterns were visible and those were it was not. 
-Some of this data is reflected in Figure \ref{fig:conditions}, where we can see that there is not any signification correlation between the observing conditions and the visibility of the second moment patterns. Seeing measurements recorded by the DIMM, wind speeds, or even the total PSF do not seem to influence the visibility of these patterns. 
+Some of this data is reflected in Figure \ref{fig:conditions}, where we can see that there is not any signification correlation between the observing conditions and the visibility of the second moment patterns. 
+Seeing measurements recorded by the DIMM, wind speeds, or even the total PSF do not seem to influence the visibility of these patterns. 
+
+An original consideration to explain why the ellipticity pattern did not seem to be recoverable in the on-sky images was a result of unpredictable behavior in the upper atmosphere not adequately represented by DIMM measurements.
+However, this would have been captured by the total PSF which also showed no relationship to pattern visibility. 
+
+
+While Figure \ref{fig:example_image} is an instance where the expected ellipticity pattern is not visible, 15 exposures were flagged as matching the \texttt{StarSharp} model. Figure \ref{fig:visible} is an example of this match. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{2025042000586_Cam_z.png}
+    \caption{Comparison between the on-sky second moment information for an exposure where the expected pattern from \texttt{StarSharp} is recoverable in the image. This exposure has a \texttt{seqnum} of 2025042000586.}
+    \label{fig:visible}
+\end{figure}
+
+While no correlation to the observing conditions could be established in the pattern-visible exposures, it was noted that exposures where the pattern is visible are almost exclusively hexapod degrees of freedom as opposed to bending modes. 
+
+
+\section{Results and Conclusion}
+
+
+Comparing the second moment information from on-sky data to the models, such as in Figure \ref{fig:example_image}, it is clear that the patterns are not typically recoverable. 
+For the 117 exposures of the investigation, only 15 were considered to reflect the expected pattern for manipulating a given degree of freedom. 
+Initially, the hypothesis for this was that the observing conditions and atmosphere would dominate any contribution from the degrees of freedom and the patterns might only be visible in the clearest exposures. 
+However, 
 
 \begin{figure}
     \centering
@@ -196,10 +221,6 @@ Some of this data is reflected in Figure \ref{fig:conditions}, where we can see 
     \caption{Comparisons between the observing conditions of exposures where the expected patterns were visible to the rest of the data. }
     \label{fig:conditions}
 \end{figure}
-
-\section{Results and Conclusion}
-
-Comparing the second moment information from on-sky data to the models, such as in Figure \ref{fig:example_image}, it is clear that the patterns are not typically recoverable. For the 117 exposures of the investigation, only 15 were considered to reflect the expected pattern for manipulating a given degree of freedom. 
 
 The modeled ellipticity value integrated into Rubin TV rarely agrees with the measured on-sky ellipticity value, probably also due to the discrepancy of the initial conditions assumption. 
 
@@ -217,6 +238,8 @@ Additional Rubin Observatory funding comes from private donations, grants to uni
 \section{References} \label{sec:bib}
 \renewcommand{\refname}{} % Suppress default Bibliography section
 \bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+\clearpage
 
 % Make sure lsst-texmf/bin/generateAcronyms.py is in your path
 \section{Acronyms} \label{sec:acronyms}
